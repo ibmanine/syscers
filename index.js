@@ -6,7 +6,7 @@ const ws = require("ws")
 
 const port = process.env.PORT || 3000
 
-const wss = new ws.Server({ port: 8080, noServer: true })
+const wss = new ws.Server({ noServer: true })
 
 wss.on('connection', socket => {
     socket.on('message', message => {
