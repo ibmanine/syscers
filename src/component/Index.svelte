@@ -312,8 +312,6 @@
 
 		msg = ""
 	}
-
-	var interv = setInterval(client.ping(), 28000)
 </script>
 <svelte:head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js" on:load={load1}></script>

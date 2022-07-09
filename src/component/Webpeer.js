@@ -14,9 +14,6 @@ class Webpeer{
             on: handle, data: data
         }))
     }
-    ping(){
-        this.peer.ping(() => {})
-    }
 }
 
 export default Webpeer
