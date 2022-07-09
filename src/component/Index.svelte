@@ -201,6 +201,7 @@
 
 
 	client.on("chat", res => {
+		console.log("signal")
 		if(!res.to && !res.data && !res.salt && !res.signature) return
 		else if(res.from == key.pub) return
 		else if(res.to != key.pub) return
