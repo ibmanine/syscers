@@ -5,8 +5,12 @@ class Webpeer{
     }
     on(handle, callback){
         console.log(this.peer.readyState)
-        if(this.peer.readyState == WebSocket.CLOSING || this.peer.readyState == WebSocket.CLOSED)
+        if(this.peer.readyState == WebSocket.CLOSING || this.peer.readyState == WebSocket.CLOSED){
+            this.peer = new WebSocket(this.url)
             this.peer.send(JSON.stringify({}))
+            this.on(handle, callback)
+            return
+        }
         this.peer.onmessage = res => {
             const json = JSON.parse(res.data)
             if(json.on == handle)
