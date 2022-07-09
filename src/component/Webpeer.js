@@ -15,6 +15,9 @@ class Webpeer{
             this.peer = new WebSocket(this.url)
             this.emit(handle, data)
             return
+        }else if(this.peer.readyState == WebSocket.CONNECTING){
+            setTimeout(() => this.emit(handle, data), 1000)
+            return
         }
         this.peer.send(JSON.stringify({
             on: handle, data: data
