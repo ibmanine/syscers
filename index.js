@@ -18,6 +18,10 @@ wss.on('connection', socket => {
 
 app.use(express.static(__dirname+"/public"))
 
+app.get("/api", (req, res) => {
+    res.json({ port: port })
+})
+
 app.get("*", (req, res) => {
     res.sendFile(__dirname+"/public/index.html")
 })

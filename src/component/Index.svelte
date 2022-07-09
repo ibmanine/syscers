@@ -3,7 +3,12 @@
 
 	if(!localStorage.getItem("passkey")) location.href = "/profile"
 
-	const client = new Webpeer('ws://'+location.hostname+':3000');
+	var client = null
+	fetch("/api")
+	.then(res => res.json())
+	.then(data => {
+		client = new Webpeer('ws://'+location.hostname+':'+data.port);
+	})
 
 	var createkey = null
 	var jsenc = null
