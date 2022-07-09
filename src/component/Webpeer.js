@@ -1,5 +1,8 @@
+import { CLOSING } from "ws"
+
 class Webpeer{
     constructor(url){
+        this.url = url
         this.peer = new WebSocket(url)
     }
     on(handle, callback){
@@ -10,6 +13,11 @@ class Webpeer{
         }
     }
     emit(handle, data){
+        if(this.peer.readyState == CLOSED || this.peer.readyState == CLOSING){
+            this.peer = new WebSocket(this.url)
+            this.emit(handle, data)
+            return
+        }
         this.peer.send(JSON.stringify({
             on: handle, data: data
         }))
