@@ -11,7 +11,7 @@ class Webpeer{
         }
     }
     emit(handle, data){
-        if(this.peer.readyState == CLOSED || this.peer.readyState == CLOSING){
+        if(this.peer.readyState == WebSocket.CLOSED || this.peer.readyState == WebSocket.CLOSING){
             this.peer = new WebSocket(this.url)
             this.emit(handle, data)
             return
