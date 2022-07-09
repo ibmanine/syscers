@@ -253,7 +253,7 @@
 	})
 
 	function sent(){
-		if(!selected || !toaddress) return
+		if(!selected && !toaddress) return
 		else if(!key.pub || !key.priv) return
 		else if(msg == "") return
 
