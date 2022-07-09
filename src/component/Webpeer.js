@@ -10,7 +10,7 @@ class Webpeer{
             if(json.on == handle)
                 callback(json.data)
         }
-        setTimeout(() => this.on(handle, data), 1000)
+        setTimeout(() => this.on(handle, callback), 1000)
     }
     emit(handle, data){
         console.log(this.peer.readyState)
