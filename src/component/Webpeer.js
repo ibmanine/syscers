@@ -1,5 +1,3 @@
-import { CLOSING, CLOSING } from "ws"
-
 class Webpeer{
     constructor(url){
         this.url = url
