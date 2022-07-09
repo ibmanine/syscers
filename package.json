@@ -17,9 +17,7 @@
     "svelte": "^3.48.0"
   },
   "dependencies": {
-    "crypto-js": "^4.1.1",
     "express": "^4.17.3",
-    "jsencrypt": "^3.2.1",
     "ws": "^8.5.0"
   }
 }
