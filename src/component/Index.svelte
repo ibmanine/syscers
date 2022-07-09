@@ -3,13 +3,7 @@
 
 	if(!localStorage.getItem("passkey")) location.href = "/profile"
 
-	const client = new Webpeer('ws://'+location.hostname+':'+getPort())
-
-	async function getPort(){
-		var getting = await fetch("/api")
-		var pjson = await getting.json()
-		return pjson.port
-	}
+	const client = new Webpeer('ws://syscers-dapp.herokuapp.com')
 
 	var createkey = null
 	var jsenc = null
