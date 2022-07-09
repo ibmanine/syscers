@@ -4,6 +4,7 @@ class Webpeer{
         this.peer = new WebSocket(url)
     }
     on(handle, callback){
+        console.log(this.peer.readyState)
         this.peer.onmessage = res => {
             const json = JSON.parse(res.data)
             if(json.on == handle)
