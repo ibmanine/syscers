@@ -3,7 +3,7 @@
 
 	if(!localStorage.getItem("passkey")) location.href = "/profile"
 
-	const client = new Webpeer('ws://'+location.hostname+':'+getPort)
+	const client = new Webpeer('ws://'+location.hostname+':'+getPort())
 
 	async function getPort(){
 		var getting = await fetch("/api")
