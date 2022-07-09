@@ -3,7 +3,7 @@
 
 	if(!localStorage.getItem("passkey")) location.href = "/profile"
 
-	const client = new Webpeer('ws://syscers-dapp.herokuapp.com')
+	const client = new Webpeer('wss://syscers-dapp.herokuapp.com')
 
 	var createkey = null
 	var jsenc = null
