@@ -5,6 +5,7 @@ class Webpeer{
     }
     on(handle, callback){
         console.log(this.peer.readyState)
+        this.peer.send(JSON.stringify({}))
         this.peer.onmessage = res => {
             const json = JSON.parse(res.data)
             if(json.on == handle)
