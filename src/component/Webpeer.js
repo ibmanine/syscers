@@ -5,8 +5,12 @@ class Webpeer{
     }
     on(handle, callback){
         console.log(this.peer.readyState)
-        this.peer = new WebSocket(this.url)
-        if(this.peer.readyState != WebSocket.OPEN){
+        if(this.peer.readyState == WebSocket.CLOSED){
+            this.peer = new WebSocket(this.url)
+            setTimeout(() => this.on(handle, callback), 1000)
+            return
+        }
+        else if(this.peer.readyState != WebSocket.OPEN){
             setTimeout(() => this.on(handle, callback), 1000)
             return
         }
