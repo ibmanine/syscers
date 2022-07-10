@@ -201,7 +201,6 @@
 
 
 	client.on("chat", res => {
-		console.log("signal")
 		if(!res.to && !res.data && !res.salt && !res.signature) return
 		else if(res.from == key.pub) return
 		else if(res.to != key.pub) return
@@ -356,7 +355,7 @@
 		width: 600px;
 		height: calc(100vh - 3em);
 		text-align: left;
-		margin: 16px auto;
+		margin: 16px auto 0px auto;
 		box-shadow: 0px 0px 12px #aab;
 		overflow: hidden;
 		border-radius: 12px;

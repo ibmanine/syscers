@@ -116,7 +116,7 @@
 		width: 600px;
 		height: calc(100vh - 3em);
 		text-align: left;
-		margin: 16px auto;
+		margin: 16px auto 0px auto;
 		box-shadow: 0px 0px 12px #aab;
 		overflow-y: scroll;
 		border-radius: 12px;
